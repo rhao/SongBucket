@@ -31,13 +31,13 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 		    	</button>
-		    	<a class="navbar-brand" href="../php/index.php">SoundBucket</a>
+		    	<a class="navbar-brand" href="../html/index.html">SoundBucket</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav navbar-right">
-			        <li><a href="../php/index.php">Home</a></li>
+			        <li><a href="../html/index.html">Home</a></li>
 			        <li><a href="../html/search.html">Search</a></li>
 			        <li><a href="contact.html">Friends</a></li>
 			        <li><a href="blog.html">My Bucket</a></li>
