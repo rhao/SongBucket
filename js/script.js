@@ -8,15 +8,11 @@ $().ready(function() {
 		console.log($('#search-field').val());
 	    SC.get('/tracks', { q: $('#search-field').val() },
 		  function(tracks) {
-		    //FIRST soundcloud sends back an array of 50 objects (0~49)
 		    // console.log(tracks);
 		      var list = $("#results ul");
-		      var sharePanel = $("#sharing ul");
-		      //$(tracks).each(function(index, track) {
 		      for(var index = 0; index < 10; index++){
 		      	var item = $("<li>").addClass("item_" + index);
-		      	var share = $("<button class='btn btn-default'>Share/Send</button>").addClass("share-button");
-		      	//sharePanel.append(share);
+		      	var share = $("<button class='btn btn-default'>Send to a Friend</button>").addClass("share-button");
 		      	list.append(share);
 		      	list.append("<br>");
 		      	list.append(item);
