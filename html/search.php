@@ -4,8 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="http://connect.soundcloud.com/sdk.js"></script>
-    <script src="script.js"></script>
+    <script src="../js/script.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
@@ -17,14 +20,6 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script src="//connect.soundcloud.com/sdk.js"></script>
-	<script>
-	  SC.initialize({
-	    client_id: "50a37fe38db0602a6c8ed0b281d7ecee",
-	    redirect_uri: "index.html",
-	  });
-	</script>
 
   </head>
   <body>
@@ -54,26 +49,22 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
+	<br><br><br><br>
 
-
-
-	<div class="row-fluid">
-	  <div style="background-color:gray" class="col-md-4">Hello</div>
-	  <div style="background-color:red" class="col-md-8">...</div>
-	</div>
-	<div class="row-fluid">
-	  <div style="background-color:gray" class="col-md-6">2</div>
-	  <div style="background-color:red" class="col-md-6">3</div>
-	</div>
-
-	<div class="player">
+	<div id="player" style="font-size: 50px;">
 
 	</div>
+	<div id= "form-div">
+	<form name="search-form" id="form" method="get">
+ 		<input name="Search" id="search-field" type="text">
+ 		<button id="search-button">Search</button>
+ 		<!--<input name="button" type="submit" value="Submit Information"
+ 			onclick="javascript:return search();"/>-->
+ 	</form>
+	 	<div>
+	 		<p id="results">Results:</p>
+	 	</div>
+	</div>
 
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/bootstrap.min.js"></script>
   </body>
 </html>
