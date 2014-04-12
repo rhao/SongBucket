@@ -30,7 +30,7 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 		    	</button>
-		    	<a class="navbar-brand" href="index.html">SoundBucket</a>
+		    	<a class="navbar-brand" href="index.php">SoundBucket</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,17 +45,16 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
+	<div>
+		<?php
+			
 
 
+		?>
 
-	<div class="row-fluid">
-	  <div style="background-color:gray" class="col-md-4">Hello</div>
-	  <div style="background-color:red" class="col-md-8">...</div>
 	</div>
-	<div class="row-fluid">
-	  <div style="background-color:gray" class="col-md-6">2</div>
-	  <div style="background-color:red" class="col-md-6">3</div>
-	</div>
+
+
 
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
