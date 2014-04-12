@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>SoundBucket - Confirmation</title>
 
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -31,13 +31,13 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 		    	</button>
-		    	<a class="navbar-brand" href="home.html">SoundBucket</a>
+		    	<a class="navbar-brand" href="../php/index.php">SoundBucket</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav navbar-right">
-			        <li><a href="../html/index.html">Home</a></li>
+			        <li><a href="../php/index.php">Home</a></li>
 			        <li><a href="../html/search.html">Search</a></li>
 			        <li><a href="contact.html">Friends</a></li>
 			        <li><a href="blog.html">My Bucket</a></li>
@@ -50,25 +50,33 @@
 	<div id="confirm">
 		<h3>Account Created!</h3>
 	  	<?php
-	  		$uID = $_POST['nameEntry'];
+	  		$uName = $_POST['nameEntry'];
 	  		$uEmail = $_POST['emailEntry'];
 	  		$uPass = $_POST['pass1'];
 
-	  		echo "Name: " . $uID;
+	  		echo "Name: " . $uName;
 	  		echo "<br/>Email: " . $uEmail;
 
 	  		echo "<br/>Password: ";
 	  		for($i = 0; $i < strlen($uPass); $i++) {
 	  			echo "*";
 	  		}
+	  		echo "<br/>";
 
 	  		
-	/*
+	
 	  		$link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
-	  		mysql_select_db('sound-bucket', $link) or die("Could not find database: " . mysql_error());
+	  		mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
 
-	  		$table = mysql_query("INSERT INTO 'sound-bucket' (ID, name, email) VALUES ('")
+	  		//get next ID by counting table entries
+	  		$table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading table: " . mysql_error());
 
+	  		$table = mysql_query("INSERT INTO userInfo(ID, name, email) VALUES (null, '$uName', '$uEmail')", $link) or die("Error writing to table: " . mysql_error());
+	  		$id = mysql_insert_id();
+	  		$s_table = mysql_query("SELECT * FROM secureInfo", $link) or die("Error reading secure table: " . mysql_error());
+	  		$s_table = mysql_query("INSERT INTO secureInfo(ID, password) VALUES ('$id', '$uPass')", $link) or die("Error writing to secure table: " . mysql_error());
+
+/*
 
 			$dbLink = mysql_connect('localhost', 'root', 'root') or die("Could not find database: " . mysql_error());
 				
