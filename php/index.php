@@ -9,6 +9,8 @@
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/navbar.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -45,9 +47,25 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
-	<div>
+	<div id="php-section">
 		<?php
-			
+			$accountIn = $_POST['email'];
+			$passIn = $_POST['pass'];
+
+			echo $accountIn;
+			echo $passIn;
+
+			$link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
+	  		mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
+	  		
+	  		$table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading table: " . mysql_error());
+
+	  		$table = mysql_query("INSERT INTO userInfo(ID, name, email) VALUES (null, '$uName', '$uEmail')", $link) or die("Error writing to table: " . mysql_error());
+	  		$id = mysql_insert_id();
+	  		$s_table = mysql_query("SELECT * FROM secureInfo", $link) or die("Error reading secure table: " . mysql_error());
+	  		$s_table = mysql_query("INSERT INTO secureInfo(ID, password) VALUES ('$id', '$uPass')", $link) or die("Error writing to secure table: " . mysql_error());
+
+	  		mysqli_close($link); 
 
 
 		?>

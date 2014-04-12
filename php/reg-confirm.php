@@ -63,9 +63,7 @@
 	  		}
 	  		echo "<br/>";
 
-	  		
-	
-	  		$link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
+	 	  	$link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
 	  		mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
 
 	  		//get next ID by counting table entries
@@ -75,6 +73,8 @@
 	  		$id = mysql_insert_id();
 	  		$s_table = mysql_query("SELECT * FROM secureInfo", $link) or die("Error reading secure table: " . mysql_error());
 	  		$s_table = mysql_query("INSERT INTO secureInfo(ID, password) VALUES ('$id', '$uPass')", $link) or die("Error writing to secure table: " . mysql_error());
+
+	  		mysqli_close($link); 
 
 /*
 
