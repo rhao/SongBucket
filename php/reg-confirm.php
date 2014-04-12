@@ -31,7 +31,7 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 		    	</button>
-		    	<a class="navbar-brand" href="home.html">SoundBucket</a>
+		    	<a class="navbar-brand" href="../html/home.html">SoundBucket</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
