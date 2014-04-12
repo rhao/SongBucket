@@ -6,11 +6,9 @@ body{
 }
 
 #content{
-
 	padding-top: 20px;
 	text-align: center;
-	color: orange;
-	margin-top: 200px;
+	margin-top: 50px;
 }
 
 #form-div{
@@ -18,5 +16,12 @@ body{
 	height:20%;
 	font-size: 20px;
 	text-align: center;
-	margin-top: 200px;
+}
+
+#search-bar{
+	margin-top: 60px;
+}
+
+ul{
+    list-style-type: none;
 }

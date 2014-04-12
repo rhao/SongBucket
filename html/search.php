@@ -13,6 +13,7 @@
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/navbar.css" rel="stylesheet">
+    <link href="../css/search.css" rel="stylesheet">
 
   </head>
   <body>
@@ -41,20 +42,31 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
-	<div id="content">
-		<div id= "form-div">
-			<form name="search-form" id="form" method="get">
-		 		<input name="Search" id="search-field" type="text"></br>
-		 		<button id="search-button">Search</button>
-		 	</form>
-		 </div>
-		 <div id="results">
-		 	<ul>
-	        </ul>
-		 </div>
-	</div>
+	<div class="row-fluid" id="search-bar">
 
-    </div>
+		<div class="col-md-2" id="tan-box2">
+		</div>
+
+		<div class="col-md-8" id="tan-box2">
+			<div id= "form-div">
+				<hr style="height:1px; background-color:black">
+				<form name="search-form" id="form" method="get">
+					<h3>Search for music by Title, Author, or Genre</h3>
+			 		<input name="Search" id="search-field" class="form-conrol" type="text">
+			 		<button id="search-button" class="btn btn-default">Search</button>
+			 	</form>
+			 	<hr style="height:1px; background-color:black">
+			 </div>
+			 <div id="results">
+			 	<ul>
+		        </ul>
+			 </div>
+		</div>
+
+		<div class="col-md-2" id="tan-box2">
+	    </div>
+
+	</div>
 
   </body>
 </html>
