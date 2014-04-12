@@ -75,10 +75,11 @@
 	  		while($array = mysql_fetch_array($table)) {
 	  			$count++;
 	  		}
-	  		//echo $count;
-
-
 	  		$table = mysql_query("INSERT INTO userInfo(ID, name, email) VALUES ('$count', '$uName', '$uEmail')", $link) or die("Error writing to table: " . mysql_error());
+
+	  		$s_table = mysql_query("SELECT * FROM secureInfo", $link) or die("Error reading secure table: " . mysql_error());
+	  		$s_table = mysql_query("INSERT INTO secureInfo(ID, password) VALUES ('$count', '$uPass')", $link) or die("Error writing to secure table: " . mysql_error());
+
 /*
 
 			$dbLink = mysql_connect('localhost', 'root', 'root') or die("Could not find database: " . mysql_error());
