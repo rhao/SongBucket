@@ -1,0 +1,36 @@
+#navy-bar {
+	height: 100px;
+	background-color: #154890;
+}
+
+#form {
+	margin-top: 40px;
+}
+
+#orange-bar {
+	height: 8px;
+	background-color: #ff7700;
+}
+
+#white-box {
+	background-color: #ffffff;
+	border-radius:25px;
+	text-align: center;
+	margin-top: 40px;
+	padding-top: 10px;
+	padding-bottom: 15px;
+}
+
+#brand {
+	text-align: center;
+	color:#ffffff;
+	padding-top: 10px;
+}
+
+form {
+	text-align: center;
+}
+
+body {
+	background-color: #F5EDE3;
+}
