@@ -28,6 +28,10 @@
 	padding-top: 10px;
 }
 
+body {
+  	background-image:url('http://i.imgur.com/EikJfFY.jpg');
+}
+
 h1 {
 	color: #154890;	
 }
@@ -40,7 +44,3 @@ form {
 	text-align: center;
 }
 
-body {
-  	background-image:url('http://i.imgur.com/EikJfFY.jpg');
-
-}
