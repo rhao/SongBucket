@@ -8,7 +8,7 @@
     <script src="http://connect.soundcloud.com/sdk.js"></script>
     <script src="../js/script.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
@@ -34,7 +34,7 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 		    	</button>
-		    	<a class="navbar-brand" href="home.html">Stasis Labs</a>
+		    	<a class="navbar-brand" href="home.html">SongBucket</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -58,11 +58,14 @@
 	<form name="search-form" id="form" method="get">
  		<input name="Search" id="search-field" type="text">
  		<button id="search-button">Search</button>
- 		<!--<input name="button" type="submit" value="Submit Information"
- 			onclick="javascript:return search();"/>-->
+ 		<!--<input id="search-button" name="button" type="submit" value="Search"
+ 			onclick="javascript:return playSomeMusic('electronic');"/>-->
  	</form>
 	 	<div>
-	 		<p id="results">Results:</p>
+	 		<div id="results">
+	 			<ul>
+            	</ul>
+        	</div>
 	 	</div>
 	</div>
 
