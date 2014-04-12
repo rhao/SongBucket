@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>SoundBucket - Confirmation</title>
 
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -50,25 +50,36 @@
 	<div id="confirm">
 		<h3>Account Created!</h3>
 	  	<?php
-	  		$uID = $_POST['nameEntry'];
+	  		$uName = $_POST['nameEntry'];
 	  		$uEmail = $_POST['emailEntry'];
 	  		$uPass = $_POST['pass1'];
 
-	  		echo "Name: " . $uID;
+	  		echo "Name: " . $uName;
 	  		echo "<br/>Email: " . $uEmail;
 
 	  		echo "<br/>Password: ";
 	  		for($i = 0; $i < strlen($uPass); $i++) {
 	  			echo "*";
 	  		}
+	  		echo "<br/>";
 
 	  		
-	/*
+	
 	  		$link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
-	  		mysql_select_db('sound-bucket', $link) or die("Could not find database: " . mysql_error());
+	  		mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
 
-	  		$table = mysql_query("INSERT INTO 'sound-bucket' (ID, name, email) VALUES ('")
+	  		//get next ID by counting table entries
+	  		$table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading table: " . mysql_error());
 
+	  		$count = 0;
+	  		while($array = mysql_fetch_array($table)) {
+	  			$count++;
+	  		}
+	  		//echo $count;
+
+
+	  		$table = mysql_query("INSERT INTO userInfo(ID, name, email) VALUES ('$count', '$uName', '$uEmail')", $link) or die("Error writing to table: " . mysql_error());
+/*
 
 			$dbLink = mysql_connect('localhost', 'root', 'root') or die("Could not find database: " . mysql_error());
 				
