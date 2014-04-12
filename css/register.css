@@ -10,6 +10,7 @@
 #orange-bar {
 	height: 8px;
 	background-color: #ff7700;
+	box-shadow: 1px 2px 1px #000000;
 }
 
 #tan-box {
@@ -20,6 +21,8 @@
 	padding-bottom: 30px;
 	padding-left: 30px;
 	padding-right: 30px;
+	box-shadow: 1px 2px 1px #575757;
+
 }
 
 #brand {
