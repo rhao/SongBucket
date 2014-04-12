@@ -7,23 +7,15 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="http://connect.soundcloud.com/sdk.js"></script>
     <script src="../js/script.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="../js/bootstrap.min.js"></script>
+
     <title>Bootstrap 101 Template</title>
 
-    <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="../css/navbar.css" rel="stylesheet">
 
   </head>
   <body>
-
   	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -49,25 +41,20 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
-	<br><br><br><br>
-
-	<div id="player" style="font-size: 50px;">
-
+	<div id="content">
+		<div id= "form-div">
+			<form name="search-form" id="form" method="get">
+		 		<input name="Search" id="search-field" type="text"></br>
+		 		<button id="search-button">Search</button>
+		 	</form>
+		 </div>
+		 <div id="results">
+		 	<ul>
+	        </ul>
+		 </div>
 	</div>
-	<div id= "form-div">
-	<form name="search-form" id="form" method="get">
- 		<input name="Search" id="search-field" type="text">
- 		<button id="search-button">Search</button>
- 		<!--<input id="search-button" name="button" type="submit" value="Search"
- 			onclick="javascript:return playSomeMusic('electronic');"/>-->
- 	</form>
-	 	<div>
-	 		<div id="results">
-	 			<ul>
-            	</ul>
-        	</div>
-	 	</div>
-	</div>
+
+    </div>
 
   </body>
 </html>
