@@ -64,6 +64,10 @@
 		</div>
 
 		<div class="col-md-2" id="tan-box2">
+			<div id="sharing">
+			 	<ul>
+		        </ul>
+			</div>
 	    </div>
 
 	</div>
