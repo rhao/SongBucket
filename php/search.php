@@ -51,13 +51,25 @@
 		<div class="col-md-8" id="tan-box2">
 			<div id= "form-div">
 				<hr style="height:1px; background-color:black">
-				<form name="search-form" id="form" method="get" style="text-align:center">
-					<h2>Search for Music by Title, Author, or Genre</h2>
-			 		<input name="Search" id="search-field" class="form-control" type="text" style="width:30%; margin-left:auto; margin-right:auto;">
-			 		<button id="search-button" class="btn btn-default">Search</button>
-			 	</form>
-			 	<hr style="height:1px; background-color:black">
-			 </div>
+				<h2>Search for Music by Title, Author, or Genre</h2>
+
+				<div class="row-fluid">
+					<div class="col-md-3">
+					</div>
+
+		 			<div class="col-md-4">
+		 				<input name="Search" id="search-field" class="form-control" type="text">
+		 			</div>
+
+		 			<div class="col-md-2">
+		 				<button id="search-button" class="btn btn-default">Search</button>
+		 			</div>
+
+		 			<div class="col-md-3">
+		 			</div>
+				</div>
+			 <br/><hr style="height:1px; background-color:black">
+
 			 <div id="results">
 			 	<ul>
 		        </ul>
