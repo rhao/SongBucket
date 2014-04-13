@@ -38,8 +38,8 @@
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav navbar-right">
 			        <li><a href="../html/index.html">Home</a></li>
-			        <li><a href="../html/search.html">Search</a></li>
-			        <li><a href="contact.html">Friends</a></li>
+			        <li><a href="../php/search.php">Search</a></li>
+			        <li><a href="../php/friends.php">Friends</a></li>
 			        <li><a href="blog.html">My Bucket</a></li>
 		    	</ul>     
 		    </div><!-- /.navbar-collapse -->
