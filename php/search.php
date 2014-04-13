@@ -27,15 +27,16 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 		    	</button>
-		    	<a class="navbar-brand" href="home.html">SongBucket</a>
+		    	<a class="navbar-brand" href="../html/index.html">SongBucket</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav navbar-right">
-			        <li class="active"><a href="home.html">Home</a></li>
-			        <li><a href="members.html">Search</a></li>
-			        <li><a href="contact.html">Friends</a></li>
+			        <li><a href="../html/index.html">Home</a></li>
+			        <li class="active"><a href="../php/search.php">Search Music</a></li>
+			        <li><a href="../php/friends.php">Find Friends</a></li>
+			        <li><a href="../php/friends.php">My Friends</a></li>
 			        <li><a href="blog.html">My Bucket</a></li>
 		    	</ul>     
 		    </div><!-- /.navbar-collapse -->
