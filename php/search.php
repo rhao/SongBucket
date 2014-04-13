@@ -51,9 +51,9 @@
 		<div class="col-md-8" id="tan-box2">
 			<div id= "form-div">
 				<hr style="height:1px; background-color:black">
-				<form name="search-form" id="form" method="get">
+				<form name="search-form" id="form" method="get" style="text-align:center">
 					<h2>Search for Music by Title, Author, or Genre</h2>
-			 		<input name="Search" id="search-field" class="form-conrol" type="text">
+			 		<input name="Search" id="search-field" class="form-control" type="text" style="width:30%; margin-left:auto; margin-right:auto;">
 			 		<button id="search-button" class="btn btn-default">Search</button>
 			 	</form>
 			 	<hr style="height:1px; background-color:black">
