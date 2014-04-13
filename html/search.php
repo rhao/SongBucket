@@ -51,7 +51,7 @@
 			<div id= "form-div">
 				<hr style="height:1px; background-color:black">
 				<form name="search-form" id="form" method="get">
-					<h3><b>Search for Music by Title, Author, or Genre</b></h3>
+					<h2>Search for Music by Title, Author, or Genre</h2>
 			 		<input name="Search" id="search-field" class="form-conrol" type="text">
 			 		<button id="search-button" class="btn btn-default">Search</button>
 			 	</form>
