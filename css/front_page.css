@@ -24,6 +24,7 @@
 	padding-left: 30px;
 	padding-right: 30px;
 	box-shadow: 2px 2px 1px #575757;
+	opacity:0.85;
 }
 
 #tan-box2 {
@@ -37,6 +38,7 @@
 	padding-left: 30px;
 	padding-right: 30px;
 	box-shadow: 2px 2px 1px #575757;
+	opacity:0.85;
 }
 
 #brand {
@@ -56,7 +58,7 @@
 }
 
 #motto-div {
-	opacity:0.4;
+	opacity:0.7;
 	background-color: #eeeeee;
 	margin-top: 50px;
 }
