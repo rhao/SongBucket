@@ -1,9 +1,13 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://connect.soundcloud.com/sdk.js"></script>
+    <script src="../js/script.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 
     <title>Bootstrap 101 Template</title>
@@ -48,17 +52,36 @@
 		<div class="col-md-8" id="tan-box2">
 			<div id= "form-div">
 				<hr style="height:1px; background-color:black">
-				<form name="friends-form" id="form" method="get">
-					<h3><b>Search for Friends by Name or Email</b></h3>
-			 		<input name="Search" id="search-field" class="form-control" type="text">
-			 		<button id="search-button" class="btn btn-default">Search</button>
-			 	</form>
-			 	<hr style="height:1px; background-color:black">
+				<h2>Search for Friends by Name or Email</h2>
+
+				<div class="row-fluid">
+					<div class="col-md-3">
+					</div>
+
+		 			<div class="col-md-4">
+		 				<input name="Search" id="search-field" class="form-control" type="text">
+		 			</div>
+
+		 			<div class="col-md-2">
+		 				<button id="search-button" class="btn btn-default">Search</button>
+		 			</div>
+
+		 			<div class="col-md-3">
+		 			</div>
+				</div>
+			 <br/><hr style="height:1px; background-color:black">
+
+			 <div id="results">
+			 	<ul>
+		        </ul>
 			 </div>
-			 
 		</div>
 
-		<div class="col-md-2">
+		<div class="col-md-2" id="tan-box2">
+			<div id="sharing">
+			 	<ul>
+		        </ul>
+			</div>
 	    </div>
 
 	</div>
