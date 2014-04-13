@@ -12,7 +12,7 @@ $().ready(function() {
 		      var list = $("#results ul");
 		      for(var index = 0; index < 10; index++){
 		      	var item = $("<li>").addClass("item_" + index);
-		      	var share = $("<button class='btn btn-default'>Send to a Friend</button>").addClass("share-button");
+		      	var share = $("<button class='btn btn-default share-button'>Send to a Friend</button>").addClass("share-button_" + index);
 		      	list.append(share);
 		      	list.append("<br>");
 		      	list.append(item);
