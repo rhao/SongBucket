@@ -10,14 +10,41 @@
     <script src="../js/script.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 
-    <title>Bootstrap 101 Template</title>
+    <title>SongBucket - Find Friends</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/navbar.css" rel="stylesheet">
     <link href="../css/search.css" rel="stylesheet">
 
+    <style>
+    	#search-field {
+    		text-align: center;
+    		margin-left: 30%;
+    		margin-right: 30%;
+    		width: 40%;
+    	}
+    	#my-id {
+    		text-align: center;
+    		margin-left: 30%;
+    		margin-right: 30%;
+    		width: 40%;
+    	}
+    	#butt {
+    		margin-top: 10px;
+    	}
+    	.search-text {
+    		font-size: 14px;
+    		width: 150px;
+    	}
+    	form {
+    		display:inline;
+    	}
+    </style>
+
+
   </head>
   <body>
+
   	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -55,21 +82,24 @@
 				<h2>Search for Friends by Name or Email</h2>
 
 				<div class="row-fluid">
-					<div class="col-md-3">
+					<div class="col-md-2">
 					</div>
-
-		 			<div class="col-md-4">
-		 				<input name="Search" id="search-field" class="form-control" type="text">
-		 			</div>
-
+					
+					<div class="col-md-8">
+						<form id="form-log-in" name="form-log-in" action="friends.php" method="post">
+							<span class="search-text">Friend email or name:</span>
+			            	<input name="Search" id="search-field" class="form-control" type="text"> 
+			            	<span class="search-text">Confirm your email:</span>
+			            	<input name="Mine" id="my-id" class="form-control" type="text"> 
+			                <input type="submit" id="butt" class="btn btn-default" onclick="<?php searchFriends(); ?>" value="Search"/>
+			            </form>
+			        </div>
+			   
 		 			<div class="col-md-2">
-		 				<button id="search-button" class="btn btn-default">Search</button>
-		 			</div>
-
-		 			<div class="col-md-3">
 		 			</div>
 				</div>
-			 <br/><hr style="height:1px; background-color:black">
+
+			 <hr style="height:1px; background-color:black; margin-top:210px">
 
 			 <div id="results">
 			 	<ul>
@@ -85,6 +115,12 @@
 	    </div>
 
 	</div>
+
+
+
+
+
+
 
   </body>
 </html>
