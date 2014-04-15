@@ -56,11 +56,11 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav navbar-right">
-			        <li><a href="index.html">Home</a></li>
+			        <li><a href="../html/index.html">Home</a></li>
 			        <li><a href="../php/search.php">Search Music</a></li>
 			        <li><a href="../php/friends.php">Find Friends</a></li>
 			        <li class="active"><a href="../php/myfriends.php">My Friends</a></li>
-			        <li><a href="">My Bucket</a></li>
+			        <li><a href="../html/bucket.html">My Bucket</a></li>
 		    	</ul>     
 		    </div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
@@ -69,7 +69,7 @@
 
 	<div id="tan-box">
 		
-			<h1 id="underline" class="dbText">Friends:&emsp;name&emsp;email</h1>
+			<h1 id="underline" class="dbText">Friends:&emsp;&emsp;name,&emsp;&emsp;email</h1>
 		<?php
 			$link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
 			mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
@@ -78,7 +78,7 @@
 			$u_table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading user table: " . mysql_error());
 	
 			while ($array = mysql_fetch_array($u_table)) { 
-				echo "<p class='dbText'>" . $array["name"] . " "; 
+				echo "<p class='dbText'>" . $array["name"] . ", "; 
 				echo "&emsp;" . $array["email"] . "</p>"; 
 			}
 		?>

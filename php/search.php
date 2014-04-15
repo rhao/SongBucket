@@ -36,8 +36,8 @@
 			        <li><a href="../html/index.html">Home</a></li>
 			        <li class="active"><a href="../php/search.php">Search Music</a></li>
 			        <li><a href="../php/friends.php">Find Friends</a></li>
-			        <li><a href="../php/friends.php">My Friends</a></li>
-			        <li><a href="blog.html">My Bucket</a></li>
+			        <li><a href="../php/myfriends.php">My Friends</a></li>
+			        <li><a href="../html/bucket.html">My Bucket</a></li>
 		    	</ul>     
 		    </div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
