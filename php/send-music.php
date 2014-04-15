@@ -15,6 +15,31 @@
     <link href="../css/navbar.css" rel="stylesheet">
     <link href="../css/search.css" rel="stylesheet">
 
+    <style>
+    	#search-field {
+    		text-align: center;
+    		margin-left: 30%;
+    		margin-right: 30%;
+    		width: 40%;
+    	}
+    	#my-id {
+    		text-align: center;
+    		margin-left: 30%;
+    		margin-right: 30%;
+    		width: 40%;
+    	}
+    	#search-send-button {
+    		margin-top: 10px;
+    	}
+    	.search-text {
+    		font-size: 14px;
+    		width: 150px;
+    	}
+    	form {
+    		display:inline;
+    	}
+    </style>
+
     <script>
     	$(document).ready(function(){
     		var songLink = "<?php print($_GET['link']); ?>";
@@ -86,27 +111,29 @@
 			<div id= "form-div">
 				<hr style="height:1px; background-color:black">
 				<h2>Enter a Friend's Name to Send the Song to</h2>
-
+				<h4>And Your Email as Confirmation</h4>
 				<div class="row-fluid">
-					<div class="col-md-3">
+					<div class="col-md-2">
 					</div>
-
-		 			<div class="col-md-4">
-		 				<input name="search-send-friend" id="search-send-friend" class="form-control" type="text" method="get">
-		 			</div>
-
+					
+					<div class="col-md-8">
+						<form id="form-log-in" name="form-log-in" action="friends.php" method="post">
+							<span class="search-text">Friend email or name:</span>
+			            	<input name="search-send-friend" id="search-send-friend" class="form-control" type="text"> 
+			            	<span class="search-text">Confirm your email:</span>
+			            	<input name="Mine" id="my-id" class="form-control" type="text"> 
+			                <input type="submit" id="search-send-button" class="btn btn-default" value="Search"/>
+			            </form>
+			        </div>
+			   
 		 			<div class="col-md-2">
-		 				<button id="search-send-button" class="btn btn-default">Search</button>
-		 			</div>
-
-		 			<div class="col-md-3">
 		 			</div>
 				</div>
-			 <br/><hr style="height:1px; background-color:black">
+			 <br/><hr style="height:1px; background-color:black; margin-top:210px">
 
 			 <div id="results">
 			 	<ul>
-			 		Here's the results section!
+			 		
 		        </ul>
 			 </div>
 		</div>
