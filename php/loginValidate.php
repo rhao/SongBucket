@@ -13,7 +13,7 @@
 	$userID;
 
 	//loop through users looking for correct email
-	while ($array = mysql_fetch_array($u_table)) { 
+	while ($array = mysql_fetch_array($u_table)) {
 		if($array["email"] == $accountIn) {
 			$userFound = true;
 			$userID = $array["ID"];
