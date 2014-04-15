@@ -28,7 +28,9 @@
 		    		//$searchname = $_GET['search-send-friend'];
 
 		    		$table = mysqli_query($con, "SELECT * FROM friendsinfo") or die(mysql_error());
-						/*
+						
+					$newText = '';
+						
 					while ($arrRecords = mysqli_fetch_array($table)) {
 						 $newText .= '<tr>';
 						 $newText .= '<td>' . $arrRecords['friend_ID1'] . '</td>';
@@ -36,13 +38,11 @@
 						 $newText .= '</tr>';
 					}
 				?>
-/*
+
     			var entry = "<?php print($newText); ?>";
 
-				$("#results").html(entry);
-				*/
+				$("#results").append(entry);
 
-				?>
     		})
     	})
 
@@ -106,6 +106,7 @@
 
 			 <div id="results">
 			 	<ul>
+			 		Here's the results section!
 		        </ul>
 			 </div>
 		</div>
