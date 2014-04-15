@@ -56,7 +56,7 @@
 						
 					$newText = '';
 						
-					while ($arrRecords = mysqli_fetch_array($table)) {
+					while ($arrRecords = mysqli_fetch_array($table)){
 						 $newText .= '<tr>';
 						 $newText .= '<td>' . $arrRecords['friend_ID1'] . '</td>';
 						 $newText .= '<td>' . $arrRecords['friend_ID2'] . '</td>';
