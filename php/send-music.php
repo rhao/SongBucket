@@ -22,7 +22,7 @@
     		margin-right: 30%;
     		width: 40%;
     	}
-    	#my-id {
+    	#email {
     		text-align: center;
     		margin-left: 30%;
     		margin-right: 30%;
@@ -66,7 +66,7 @@
 
     			var entry = "<?php print($newText); ?>";
 
-				$("#results").append(entry);
+				//$("#results").append(entry);
 
     		})
     	})
@@ -111,7 +111,7 @@
 			<div id= "form-div">
 				<hr style="height:1px; background-color:black">
 				<h2>Enter a Friend's Name to Send the Song to</h2>
-				<h4>And Your Email as Confirmation</h4>
+				<h3>And Your Email as Confirmation</h3>
 				<div class="row-fluid">
 					<div class="col-md-2">
 					</div>
@@ -121,7 +121,7 @@
 							<span class="search-text">Friend email or name:</span>
 			            	<input name="search-send-friend" id="search-send-friend" class="form-control" type="text"> 
 			            	<span class="search-text">Confirm your email:</span>
-			            	<input name="Mine" id="my-id" class="form-control" type="text"> 
+			            	<input name="email" id="email" class="form-control" type="text"> 
 			                <input type="submit" id="search-send-button" class="btn btn-default" value="Search"/>
 			            </form>
 			        </div>
