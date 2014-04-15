@@ -31,21 +31,21 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 		    	</button>
-		    	<a class="navbar-brand" href="../html/index.html">SoundBucket</a>
+		    	<a class="navbar-brand" href="../html/index.html">SongBucket</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav navbar-right">
 			        <li><a href="../html/index.html">Home</a></li>
-			        <li><a href="../php/search.php">Search</a></li>
-			        <li><a href="../php/friends.php">Friends</a></li>
+			        <li><a href="../php/search.php">Search Music</a></li>
+			        <li><a href="../php/friends.php">Find Friends</a></li>
+			        <li><a href="../php/friends.php">My Friends</a></li>
 			        <li><a href="blog.html">My Bucket</a></li>
 		    	</ul>     
 		    </div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
-
 
 	<div id="confirm">
 		<h3>Account Created!</h3>
@@ -66,7 +66,6 @@
 	 	  	$link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
 	  		mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
 
-	  		//get next ID by counting table entries
 	  		$table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading table: " . mysql_error());
 
 	  		$table = mysql_query("INSERT INTO userInfo(ID, name, email) VALUES (null, '$uName', '$uEmail')", $link) or die("Error writing to table: " . mysql_error());
