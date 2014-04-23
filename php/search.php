@@ -15,6 +15,26 @@
     <link href="../css/navbar.css" rel="stylesheet">
     <link href="../css/search.css" rel="stylesheet">
 
+    <style>
+
+		.btn-custom {
+		  background-color: hsl(194, 100%, 42%) !important;
+		  background-repeat: repeat-x;
+		  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1ecaff", endColorstr="#00a4d6");
+		  background-image: -khtml-gradient(linear, left top, left bottom, from(#1ecaff), to(#00a4d6));
+		  background-image: -moz-linear-gradient(top, #1ecaff, #00a4d6);
+		  background-image: -ms-linear-gradient(top, #1ecaff, #00a4d6);
+		  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1ecaff), color-stop(100%, #00a4d6));
+		  background-image: -webkit-linear-gradient(top, #1ecaff, #00a4d6);
+		  background-image: -o-linear-gradient(top, #1ecaff, #00a4d6);
+		  background-image: linear-gradient(#1ecaff, #00a4d6);
+		  border-color: #00a4d6 #00a4d6 hsl(194, 100%, 38.5%);
+		  color: #fff !important;
+		  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23);
+		  -webkit-font-smoothing: antialiased;
+		}
+    </style>
+
   </head>
   <body>
   	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -63,7 +83,7 @@
 		 			</div>
 
 		 			<div class="col-md-2">
-		 				<button id="search-button" class="btn btn-default">Search</button>
+		 				<button id="search-button" class="btn btn-default btn-custom">Search</button>
 		 			</div>
 
 		 			<div class="col-md-3">

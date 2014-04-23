@@ -126,16 +126,12 @@
 
 							$str .= "<div class='row'> <div class='col-md-2'></div><div class='col-md-3'><p class='dbText'>" . $array2["name"] . "</div>";
 
-
-							//echo "<p class='dbText'>" . $array2["name"] . ", "; 
-							//echo "&emsp;" . $array2["email"] . "</p>"; 
 							$str .= "<div class='col-md-3'><p class='dbText'>" . $array2["email"] . "</div>
-							<div class='col-md-3'><input type='submit' class='btn btn-default btn-custom ' onclick='return removeFriend($i);' value='Remove Friend'/></div>
+							<div class='col-md-3'><input type='submit' class='btn btn-default btn-custom ' onclick=window.location='removeFriend.php' value='Remove Friend'/></div>
 								</div>";
 							$i++;
 							
 							$u_table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading user table: " . mysql_error());
-//<button>Remove Friend</button>
 							break;
 						}
 						
@@ -144,43 +140,8 @@
 				
 			}
 
-			// $str .= "<div class='col-md-3'></div>
-			// 		</div>";
-
 			echo $str;
-			//btn'+ $i
-
-			function removeFriend($in) {
-				echo "<br/><br/><h1>HIII</h1>";
-
-				// $link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
-				// mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
-		
-				// $f_table = mysql_query("SELECT * FROM friendsInfo", $link) or die("Error reading user table: " . mysql_error());
-				// $index = 0;
-
-						
-				// while ($array = mysql_fetch_array($f_table)) { 
-				// 	if($index < $in) {
-				// 		if($array["friend_id1"] == $phpid) {
-				// 			$index++;
-				// 		}
-				// 	}
-				// 	else {
-				// 		//get friend id
-				// 		$toRemoveID = $array["friend_id2"];
-
-				// 		//delete both sets of friend connections
-				// 		$f_table = mysql_query("DELETE FROM friendsInfo WHERE friend_id1='$phpid' AND friend_id2='$toRemoveID'", $Link) or die("Error deleting from table: " . mysql_error());
-				// 		$f_table = mysql_query("DELETE FROM friendsInfo WHERE friend_id1='$toRemoveID' AND friend_id2='phpid'", $Link) or die("Error deleting from table: " . mysql_error());
-						
-				// 	}
-				// }
-				return true;
-				
-
-			//get userInfo table
-		}
+			
 			
 		?>
 		
