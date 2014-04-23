@@ -42,53 +42,7 @@
     </style>
 
     <script>
-    	$().ready(function(){
-    		var songLink = "<?php print($_GET['link']); ?>";
-    		console.log("Found the song link. It's " + songLink);
 
-    		 $("#search-send-button").click(function(){
-    			<?php
-		    		$con = mysql_connect("localhost","admin","") or die("Could not connect: " . mysql_error());
-		    		mysql_select_db('test', $con) or die("Could not find database: " . mysql_error());
-
-		    		//$searchname = $_GET['search-send-friend'];
-		    		$searchname = "Holly Mitchell";
-
-		    		$f_table = mysql_query("SELECT * FROM names", $con) or die("Error reading table: " . mysql_error());
-
-		    		while ($array = mysql_fetch_array($f_table)) {
-						if(strtolower($array["name"]) == $searchname) {
-
-							$reciever_id = $array["ID"];
-							break;
-						}
-						
-					}
-				
-					$newText = '';
-
-					$song_url = $_GET['link'];
-
-					//FOR TESTING - USE PHPID for real thing
-
-					//$id_num = 1;
-
-			  		//$table = mysql_query("INSERT INTO sharedsongs(recieverID, senderID, songURL) VALUES ('$reciever_id', '$id_num', '$song_url')", $con) or die("Error writing to table: " . mysql_error());
-			  		// $id = mysql_insert_id();
-			  		// $s_table = mysql_query("SELECT * FROM secureInfo", $link) or die("Error reading secure table: " . mysql_error());
-			  		// $s_table = mysql_query("INSERT INTO secureInfo(ID, password) VALUES ('$id', '$uPass')", $link) or die("Error writing to secure table: " . mysql_error());
-
-//			  		mysql_close($con);
-
-					//$s_table = mysql_query("INSERT INTO secureInfo(ID, password) VALUES ('$id', '$uPass')", $link) or die("Error writing to secure table: " . mysql_error());
-						
-				?>
-
-				//$("#results").append(entry);
-
-
-    		})
-    	})
 
     </script>
 

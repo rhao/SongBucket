@@ -66,41 +66,29 @@
     </style>
 
     <script>
-    	$().load(function(){
+		SC.initialize({
+		  client_id: '50a37fe38db0602a6c8ed0b281d7ecee'
+		});
 
-    		$link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
-			mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
-	
-			$f_table = mysql_query("SELECT * FROM friendsInfo", $link) or die("Error reading user table: " . mysql_error());
-			$u_table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading user table: " . mysql_error());
-					
-			var songs = $("#song-col ul");
-			var done = $('#done-col ul');
-			var url = 'http://soundcloud.com/elliegoulding/burn';
-			song.html('');
-			$str = '';
-			while ($array = mysql_fetch_array($f_table)) {
-
-				var item = $("<li>").addClass("song_" + index);
-		      	var share = $("<button class='btn btn-default share-button' onclick='return removeSong(" + index + ")'>Done Listening</button>").addClass("done-button_" + index);
-
-		      	//$str .= item;
-		      	//$str .= "<br>";
-		      	songs.append(item);
-		      	//list.append("<br>");
-		      	//list.append(item);
-		      	//list.append("<hr style='height:1px; background-color:black'>");
-		      	//songLinks[index] = tracks[index].permalink_url;
-			    SC.oEmbed(url, {
+		function showSongs(i, URL, sname){
+			var list = $("#song-col ul");
+			var nlist = $("#name-col ul");
+			//var url = 'http://soundcloud.com/elliegoulding/burn';
+			//alert("working?");
+			var item = $("<li>").addClass("item_" + i);
+			var n = $("<li style='margin-bottom:400px;font-size:20px'>Sent by: " + sname + "</li>");
+			//	$url = 'http://soundcloud.com/elliegoulding/burn';
+			list.append(item);
+			nlist.append(n);
+			
+			SC.oEmbed(URL, {
 			     	auto_play: false,
-			     	color: "ff0066"
+			     	color: 'ff0066'
 			     },
 		        		item.get(0));
-			 				
-			}
 
-    	})
-    </script>
+		}
+	</script>
 
   </head>
   <body>
@@ -142,23 +130,54 @@
 			</div>
 
 			<div class='row'>
-				<div class='col-md-6' id='song-col'>
-					HEy
-					<ul>
+				<div class='col-md-8' id='song-col'>
+					
+					<ul style="list-style-type:none">
 					</ul>
 				</div>
-
-				<div class='col-md-3' id='sent-by-col'>
-					Hi
-				</div>
-				
-				<div class='col-md-3' id='done-col'>
-					whaddup
-					<ul>
+				<div class='col-md-4' id='name-col'>
+					
+					<ul style="list-style-type:none">
 					</ul>
-				</div>
+				</div>				
 			</div>
 		
 	</div>
+
+	<?php
+		$link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
+		mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
+
+		$table = mysql_query("SELECT * FROM bucketInfo", $link) or die("Error reading user table: " . mysql_error());
+		
+		$index = 0;
+		$str = '';
+		while ($array = mysql_fetch_array($table)) {
+			if($array['receiverID'] == $phpid) {
+				$senderName;
+				$u_table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading user table: " . mysql_error());
+				while ($array2 = mysql_fetch_array($u_table)) {
+					if($array2["ID"] == $array["senderID"]) {
+						$senderName = $array2["name"];
+						break;
+					}
+				}
+
+				$url = $array['songURL'];
+
+		      	echo "<script type='text/javascript'>", "showSongs(" . $index;
+		        echo ",";
+		        echo $url;
+		        echo ",'";
+		        echo $senderName;
+		        //echo 'http://soundcloud.com/elliegoulding/burn';
+		        echo "');";
+		      	echo "</script>";
+
+			    $index++;
+			}
+			
+		}
+	?>
 
 </html>
