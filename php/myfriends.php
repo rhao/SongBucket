@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+  	<?php
+		session_start();
+		$phpid = $_SESSION["userid"];
+	?>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,18 +75,42 @@
 
 	<div id="tan-box">
 		
-			<h1 id="underline" class="dbText">Friends:&emsp;&emsp;name,&emsp;&emsp;email</h1>
+			<!-- <h1 id="underline" class="dbText">Friends:&emsp;&emsp;name,&emsp;&emsp;email</h1> -->
+			<h1 id="underline" class="dbText">Friends</h1>
 		<?php
+
+			$friendsArray = array();
+			$count = 0;
+
 			$link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
 			mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
 	
-			//get userInfo table
+			$f_table = mysql_query("SELECT * FROM friendsInfo", $link) or die("Error reading user table: " . mysql_error());
 			$u_table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading user table: " . mysql_error());
-	
-			while ($array = mysql_fetch_array($u_table)) { 
-				echo "<p class='dbText'>" . $array["name"] . ", "; 
-				echo "&emsp;" . $array["email"] . "</p>"; 
+
+			$b = 0;
+			$a = 0;
+			while ($array = mysql_fetch_array($f_table)) { 
+				if($array["friend_id1"] == $phpid) {
+					
+					while ($array2 = mysql_fetch_array($u_table)) { 
+						
+						if($array["friend_id2"] == $array2["ID"]) {
+							echo "<p class='dbText'>" . $array2["name"] . ", "; 
+							echo "&emsp;" . $array2["email"] . "</p>"; 
+							$u_table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading user table: " . mysql_error());
+
+							break;
+						}
+						
+					}
+				}
+				
 			}
+
+			//get userInfo table
+	
+			
 		?>
 		
 	</div>
