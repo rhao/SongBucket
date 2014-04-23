@@ -10,6 +10,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://connect.soundcloud.com/sdk.js"></script>
+    <script src="../js/script.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
@@ -60,6 +64,44 @@
 		}
 
     </style>
+
+    <script>
+    	$().load(function(){
+
+    		$link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
+			mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
+	
+			$f_table = mysql_query("SELECT * FROM friendsInfo", $link) or die("Error reading user table: " . mysql_error());
+			$u_table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading user table: " . mysql_error());
+					
+			var songs = $("#song-col ul");
+			var done = $('#done-col ul');
+			var url = 'http://soundcloud.com/elliegoulding/burn';
+			song.html('');
+			$str = '';
+			while ($array = mysql_fetch_array($f_table)) {
+
+				var item = $("<li>").addClass("song_" + index);
+		      	var share = $("<button class='btn btn-default share-button' onclick='return removeSong(" + index + ")'>Done Listening</button>").addClass("done-button_" + index);
+
+		      	//$str .= item;
+		      	//$str .= "<br>";
+		      	songs.append(item);
+		      	//list.append("<br>");
+		      	//list.append(item);
+		      	//list.append("<hr style='height:1px; background-color:black'>");
+		      	//songLinks[index] = tracks[index].permalink_url;
+			    SC.oEmbed(url, {
+			     	auto_play: false,
+			     	color: "ff0066"
+			     },
+		        		item.get(0));
+			 				
+			}
+
+    	})
+    </script>
+
   </head>
   <body>
 
@@ -82,8 +124,8 @@
 			        <li><a href="../php/index.php">Home</a></li>
 			        <li><a href="../php/search.php">Search Music</a></li>
 			        <li><a href="../php/friends.php">Find Friends</a></li>
-			        <li class="active"><a href="../php/myfriends.php">My Friends</a></li>
-			        <li><a href="../php/bucket.php">My Bucket</a></li>
+			        <li><a href="../php/myfriends.php">My Friends</a></li>
+			        <li class="active"><a href="../php/bucket.php">My Bucket</a></li>
 			        <li><a href="../php/logout.php">Log Out</a></li>
 		    	</ul>     
 		    </div><!-- /.navbar-collapse -->
@@ -92,67 +134,31 @@
 
 
 	<div id="tan-box">
-		
-			<!-- <h1 id="underline" class="dbText">Friends:&emsp;&emsp;name,&emsp;&emsp;email</h1> -->
-			<!-- <h1 id="underline" class="dbText">Friends</h1> -->
 
 			<div class='row' style="margin-bottom:20px">
 				<div class='col-md-4'></div>
-				<div class='col-md-4'><h1 id='underline' class='dbText'>Friends</h1></div>
+				<div class='col-md-4'><h1 id='underline' class='dbText'>Your Song Inbox</h1></div>
 				<div class='col-md-4'></div>
 			</div>
 
-		<?php
+			<div class='row'>
+				<div class='col-md-6' id='song-col'>
+					HEy
+					<ul>
+					</ul>
+				</div>
 
-			$friendsArray = array();
-			$count = 0;
-
-			$str = "";
-						
-
-
-			$link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
-			mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
-	
-			$f_table = mysql_query("SELECT * FROM friendsInfo", $link) or die("Error reading user table: " . mysql_error());
-			$u_table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading user table: " . mysql_error());
-					
-			while ($array = mysql_fetch_array($f_table)) { 
-				if($array["friend_id1"] == $phpid) {
-					
-					while ($array2 = mysql_fetch_array($u_table)) { 
-						
-						if($array["friend_id2"] == $array2["ID"]) {
-
-							$str .= "<div class='row'> <div class='col-md-2'></div><div class='col-md-3'><p class='dbText'>" . $array2["name"] . "</div>";
-
-							$str .= "<div class='col-md-3'><p class='dbText'>" . $array2["email"] . "</div>
-							<div class='col-md-3'><input type='submit' class='btn btn-default btn-custom ' onclick=window.location='removeFriend.php' value='Remove Friend'/></div>
-								</div>";
-							$i++;
-							
-							$u_table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading user table: " . mysql_error());
-
-							break;
-						}
-						
-					}
-				}
+				<div class='col-md-3' id='sent-by-col'>
+					Hi
+				</div>
 				
-			}
-
-			echo $str;
-			
-			
-		?>
+				<div class='col-md-3' id='done-col'>
+					whaddup
+					<ul>
+					</ul>
+				</div>
+			</div>
 		
 	</div>
 
-
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/bootstrap.min.js"></script>
-  </body>
 </html>

@@ -57,7 +57,7 @@
 			        <li class="active"><a href="../php/search.php">Search Music</a></li>
 			        <li><a href="../php/friends.php">Find Friends</a></li>
 			        <li><a href="../php/myfriends.php">My Friends</a></li>
-			        <li><a href="../html/bucket.html">My Bucket</a></li>
+			        <li><a href="../php/bucket.php">My Bucket</a></li>
 			        <li><a href="../php/logout.php">Log Out</a></li>
 		    	</ul>     
 		    </div><!-- /.navbar-collapse -->

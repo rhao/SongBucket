@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
   	    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,32 +42,50 @@
     </style>
 
     <script>
-    	$(document).ready(function(){
+    	$().ready(function(){
     		var songLink = "<?php print($_GET['link']); ?>";
     		console.log("Found the song link. It's " + songLink);
 
     		 $("#search-send-button").click(function(){
     			<?php
-		    		$con = mysqli_connect("localhost","admin","") or die("Could not connect: " . mysql_error());
-		    		mysqli_select_db($con, 'test') or die("Could not find database: " . mysql_error());
+		    		$con = mysql_connect("localhost","admin","") or die("Could not connect: " . mysql_error());
+		    		mysql_select_db('test', $con) or die("Could not find database: " . mysql_error());
 
 		    		//$searchname = $_GET['search-send-friend'];
+		    		$searchname = "Holly Mitchell";
 
-		    		$table = mysqli_query($con, "SELECT * FROM friendsinfo") or die(mysql_error());
+		    		$f_table = mysql_query("SELECT * FROM names", $con) or die("Error reading table: " . mysql_error());
+
+		    		while ($array = mysql_fetch_array($f_table)) {
+						if(strtolower($array["name"]) == $searchname) {
+
+							$reciever_id = $array["ID"];
+							break;
+						}
 						
-					$newText = '';
-						
-					while ($arrRecords = mysqli_fetch_array($table)){
-						 $newText .= '<tr>';
-						 $newText .= '<td>' . $arrRecords['friend_ID1'] . '</td>';
-						 $newText .= '<td>' . $arrRecords['friend_ID2'] . '</td>';
-						 $newText .= '</tr>';
 					}
+				
+					$newText = '';
+
+					$song_url = $_GET['link'];
+
+					//FOR TESTING - USE PHPID for real thing
+
+					//$id_num = 1;
+
+			  		//$table = mysql_query("INSERT INTO sharedsongs(recieverID, senderID, songURL) VALUES ('$reciever_id', '$id_num', '$song_url')", $con) or die("Error writing to table: " . mysql_error());
+			  		// $id = mysql_insert_id();
+			  		// $s_table = mysql_query("SELECT * FROM secureInfo", $link) or die("Error reading secure table: " . mysql_error());
+			  		// $s_table = mysql_query("INSERT INTO secureInfo(ID, password) VALUES ('$id', '$uPass')", $link) or die("Error writing to secure table: " . mysql_error());
+
+//			  		mysql_close($con);
+
+					//$s_table = mysql_query("INSERT INTO secureInfo(ID, password) VALUES ('$id', '$uPass')", $link) or die("Error writing to secure table: " . mysql_error());
+						
 				?>
 
-    			var entry = "<?php print($newText); ?>";
-
 				//$("#results").append(entry);
+
 
     		})
     	})
@@ -96,7 +115,7 @@
 			        <li><a href="../php/search.php">Search Music</a></li>
 			        <li><a href="../php/friends.php">Find Friends</a></li>
 			        <li><a href="../php/myfriends.php">My Friends</a></li>
-			        <li><a href="../html/bucket.html">My Bucket</a></li>
+			        <li><a href="../php/bucket.php">My Bucket</a></li>
 			        <li><a href="../php/logout.php">Log Out</a></li>
 		    	</ul>     
 		    </div><!-- /.navbar-collapse -->
@@ -111,18 +130,15 @@
 		<div class="col-md-8" id="tan-box2">
 			<div id= "form-div">
 				<hr style="height:1px; background-color:black">
-				<h2>Enter a Friend's Name to Send the Song to</h2>
-				<h3>And Your Email as Confirmation</h3>
+				<h2>Enter the Name of a Friend to Send the Song to:</h2>
 				<div class="row-fluid">
 					<div class="col-md-2">
 					</div>
 					
 					<div class="col-md-8">
-						<form id="form-log-in" name="form-log-in" action="friends.php" method="post">
+						<form id="form-log-in" name="form-log-in" action="send-music.php" method="get">
 							<span class="search-text">Friend email or name:</span>
-			            	<input name="search-send-friend" id="search-send-friend" class="form-control" type="text"> 
-			            	<span class="search-text">Confirm your email:</span>
-			            	<input name="email" id="email" class="form-control" type="text"> 
+			            	<input name="search-send-friend" id="search-send-friend" class="form-control" type="text">
 			                <input type="submit" id="search-send-button" class="btn btn-default" value="Search"/>
 			            </form>
 			        </div>
@@ -130,7 +146,7 @@
 		 			<div class="col-md-2">
 		 			</div>
 				</div>
-			 <br/><hr style="height:1px; background-color:black; margin-top:210px">
+			 <br/><hr style="height:1px; background-color:black; margin-top:110px;">
 
 			 <div id="results">
 			 	<ul>
