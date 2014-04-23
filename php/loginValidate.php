@@ -38,6 +38,7 @@
 					session_start();
 					$_SESSION["userid"] = $userID;
 					$_SESSION["username"] = $userName;
+					$_SESSION["useremail"] = $accountIn;
 					echo"<script>window.location = '../php/index.php';</script>";
 				}
 			}

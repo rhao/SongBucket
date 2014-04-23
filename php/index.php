@@ -34,14 +34,11 @@
   </head>
   <body>
 
-  	    <?php
-			session_start();
-			$phpname = $_SESSION["username"];
-			//echo('<p style="color:#ffffff' . $phpname . '/p>');
-			print "<br/><br/><h1>" . $phpname . "</h1>";
-			
-		?>
-
+	<?php
+		session_start();
+		$phpname = $_SESSION["username"];
+	?>
+	
   	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -58,7 +55,6 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav navbar-right">
-		    		<li id="nameSlot">Hey</li>
 			        <li class="active"><a href="index.html">Home</a></li>
 			        <li><a href="../php/search.php">Search Music</a></li>
 			        <li><a href="../php/friends.php">Find Friends</a></li>
@@ -69,6 +65,7 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
+
 	<div class="row">
      	<div class="col-md-3">
   		</div>
@@ -77,6 +74,7 @@
 			
 			<h1 class="dbText">Welcome to SongBucket!</h1>
 			<h4 class="dbText">SongBucket is a place to connect with friends, listen to music, and share songs with others!</h4>
+			
 		</div>
 
 		<div class="col-md-3">

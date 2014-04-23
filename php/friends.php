@@ -88,9 +88,7 @@
 					<div class="col-md-8">
 						<form id="form-log-in" name="form-log-in" action="findFriends.php" method="post">
 							<span class="search-text">Friend email or name:</span>
-			            	<input name="Search" id="search-field" class="form-control" type="text"> 
-			            	<span class="search-text">Confirm your email:</span>
-			            	<input name="Mine" id="my-id" class="form-control" type="text"> 
+			            	<input name="Search" id="search-field" class="form-control" type="text">
 			                <input type="submit" id="butt" class="btn btn-default" onclick="findFriends.php" value="Add Friend"/>
 			            </form>
 			        </div>
@@ -99,7 +97,7 @@
 		 			</div>
 				</div>
 
-			 <hr style="height:1px; background-color:black; margin-top:210px">
+			 <hr style="height:1px; background-color:black; margin-top:150px">
 
 			 <div id="results">
 			 	<ul>
