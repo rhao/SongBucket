@@ -31,17 +31,18 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 		    	</button>
-		    	<a class="navbar-brand" href="../html/index.html">SongBucket</a>
+		    	<a class="navbar-brand" href="../php/index.php">SongBucket</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav navbar-right">
-			        <li><a href="../html/index.html">Home</a></li>
+			        <li><a href="../php/index.php">Home</a></li>
 			        <li><a href="../php/search.php">Search Music</a></li>
 			        <li><a href="../php/friends.php">Find Friends</a></li>
 			        <li><a href="../php/myfriends.php">My Friends</a></li>
 			        <li><a href="../html/bucket.html">My Bucket</a></li>
+			        <li><a href="../php/logout.php">Log Out</a></li>
 		    	</ul>     
 		    </div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->

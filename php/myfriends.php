@@ -42,6 +42,23 @@
 			text-align: center;
 		}
 
+		.btn-custom {
+		  background-color: hsl(360, 100%, 27%) !important;
+		  background-repeat: repeat-x;
+		  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d10000", endColorstr="#890000");
+		  background-image: -khtml-gradient(linear, left top, left bottom, from(#d10000), to(#890000));
+		  background-image: -moz-linear-gradient(top, #d10000, #890000);
+		  background-image: -ms-linear-gradient(top, #d10000, #890000);
+		  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d10000), color-stop(100%, #890000));
+		  background-image: -webkit-linear-gradient(top, #d10000, #890000);
+		  background-image: -o-linear-gradient(top, #d10000, #890000);
+		  background-image: linear-gradient(#d10000, #890000);
+		  border-color: #890000 #890000 hsl(360, 100%, 23.5%);
+		  color: #fff !important;
+		  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23);
+		  -webkit-font-smoothing: antialiased;
+		}
+
     </style>
   </head>
   <body>
@@ -56,17 +73,18 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 		    	</button>
-		    	<a class="navbar-brand" href="index.html">SongBucket</a>
+		    	<a class="navbar-brand" href="index.php">SongBucket</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav navbar-right">
-			        <li><a href="../html/index.html">Home</a></li>
+			        <li><a href="../php/index.php">Home</a></li>
 			        <li><a href="../php/search.php">Search Music</a></li>
 			        <li><a href="../php/friends.php">Find Friends</a></li>
 			        <li class="active"><a href="../php/myfriends.php">My Friends</a></li>
 			        <li><a href="../html/bucket.html">My Bucket</a></li>
+			        <li><a href="../php/logout.php">Log Out</a></li>
 		    	</ul>     
 		    </div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
@@ -76,30 +94,48 @@
 	<div id="tan-box">
 		
 			<!-- <h1 id="underline" class="dbText">Friends:&emsp;&emsp;name,&emsp;&emsp;email</h1> -->
-			<h1 id="underline" class="dbText">Friends</h1>
+			<!-- <h1 id="underline" class="dbText">Friends</h1> -->
+
+			<div class='row' style="margin-bottom:20px">
+				<div class='col-md-4'></div>
+				<div class='col-md-4'><h1 id='underline' class='dbText'>Friends</h1></div>
+				<div class='col-md-4'></div>
+			</div>
+
 		<?php
 
 			$friendsArray = array();
 			$count = 0;
+
+			$str = "";
+						
+
 
 			$link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
 			mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
 	
 			$f_table = mysql_query("SELECT * FROM friendsInfo", $link) or die("Error reading user table: " . mysql_error());
 			$u_table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading user table: " . mysql_error());
-
-			$b = 0;
-			$a = 0;
+					
 			while ($array = mysql_fetch_array($f_table)) { 
 				if($array["friend_id1"] == $phpid) {
 					
 					while ($array2 = mysql_fetch_array($u_table)) { 
 						
 						if($array["friend_id2"] == $array2["ID"]) {
-							echo "<p class='dbText'>" . $array2["name"] . ", "; 
-							echo "&emsp;" . $array2["email"] . "</p>"; 
-							$u_table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading user table: " . mysql_error());
 
+							$str .= "<div class='row'> <div class='col-md-2'></div><div class='col-md-3'><p class='dbText'>" . $array2["name"] . "</div>";
+
+
+							//echo "<p class='dbText'>" . $array2["name"] . ", "; 
+							//echo "&emsp;" . $array2["email"] . "</p>"; 
+							$str .= "<div class='col-md-3'><p class='dbText'>" . $array2["email"] . "</div>
+							<div class='col-md-3'><input type='submit' class='btn btn-default btn-custom ' onclick='return removeFriend($i);' value='Remove Friend'/></div>
+								</div>";
+							$i++;
+							
+							$u_table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading user table: " . mysql_error());
+//<button>Remove Friend</button>
 							break;
 						}
 						
@@ -108,8 +144,43 @@
 				
 			}
 
+			// $str .= "<div class='col-md-3'></div>
+			// 		</div>";
+
+			echo $str;
+			//btn'+ $i
+
+			function removeFriend($in) {
+				echo "<br/><br/><h1>HIII</h1>";
+
+				// $link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
+				// mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
+		
+				// $f_table = mysql_query("SELECT * FROM friendsInfo", $link) or die("Error reading user table: " . mysql_error());
+				// $index = 0;
+
+						
+				// while ($array = mysql_fetch_array($f_table)) { 
+				// 	if($index < $in) {
+				// 		if($array["friend_id1"] == $phpid) {
+				// 			$index++;
+				// 		}
+				// 	}
+				// 	else {
+				// 		//get friend id
+				// 		$toRemoveID = $array["friend_id2"];
+
+				// 		//delete both sets of friend connections
+				// 		$f_table = mysql_query("DELETE FROM friendsInfo WHERE friend_id1='$phpid' AND friend_id2='$toRemoveID'", $Link) or die("Error deleting from table: " . mysql_error());
+				// 		$f_table = mysql_query("DELETE FROM friendsInfo WHERE friend_id1='$toRemoveID' AND friend_id2='phpid'", $Link) or die("Error deleting from table: " . mysql_error());
+						
+				// 	}
+				// }
+				return true;
+				
+
 			//get userInfo table
-	
+		}
 			
 		?>
 		
