@@ -31,7 +31,10 @@
 				if($array["password"] != $passIn) {
 					echo"<h3>Incorrect password... Redirecting</h3><script>setTimeout(function() { window.location = '../html/front_page.html'; }, 1000);</script>";
 				}
+				//valid login info!
 				else {
+					session_start();
+					$_SESSION["user"] = $userID;
 					echo"<script>window.location = '../html/index.html';</script>";
 				}
 			}
