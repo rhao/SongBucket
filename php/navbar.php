@@ -23,7 +23,7 @@
 			        <li><a class="navlink" href="../php/search.php">Search Music</a></li>
 			        <li><a class="navlink" href="../php/friends.php">Find Friends</a></li>
 			        <li><a class="navlink" href="../php/myfriends.php">My Friends</a></li>
-			        <li><a class="navlink" href="../html/bucket.html">My Bucket</a></li>
+			        <li><a class="navlink" href="../php/bucket.php">My Bucket</a></li>
 		    	</ul>     
 		    </div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
