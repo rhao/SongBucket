@@ -76,11 +76,22 @@
 	<div id="tan-box">
 		
 			<!-- <h1 id="underline" class="dbText">Friends:&emsp;&emsp;name,&emsp;&emsp;email</h1> -->
-			<h1 id="underline" class="dbText">Friends</h1>
+			<!-- <h1 id="underline" class="dbText">Friends</h1> -->
+
+			<div class='row' style="margin-bottom:20px">
+				<div class='col-md-4'></div>
+				<div class='col-md-4'><h1 id='underline' class='dbText'>Friends</h1></div>
+				<div class='col-md-4'></div>
+			</div>
+
 		<?php
 
 			$friendsArray = array();
 			$count = 0;
+
+			$str = "";
+						
+
 
 			$link = mysql_connect('localhost', 'root', 'root', '') or die("Could not connect to server: " . mysql_error());
 			mysql_select_db('sound_bucket', $link) or die("Could not find database: " . mysql_error());
@@ -88,16 +99,22 @@
 			$f_table = mysql_query("SELECT * FROM friendsInfo", $link) or die("Error reading user table: " . mysql_error());
 			$u_table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading user table: " . mysql_error());
 
-			$b = 0;
-			$a = 0;
+					
 			while ($array = mysql_fetch_array($f_table)) { 
 				if($array["friend_id1"] == $phpid) {
 					
 					while ($array2 = mysql_fetch_array($u_table)) { 
 						
 						if($array["friend_id2"] == $array2["ID"]) {
-							echo "<p class='dbText'>" . $array2["name"] . ", "; 
-							echo "&emsp;" . $array2["email"] . "</p>"; 
+
+							$str .= "<div class='row'> <div class='col-md-3'></div><div class='col-md-3'><p class='dbText'>" . $array2["name"] . "</div>";
+
+
+							//echo "<p class='dbText'>" . $array2["name"] . ", "; 
+							//echo "&emsp;" . $array2["email"] . "</p>"; 
+							$str .= "<div class='col-md-3'><p class='dbText'>" . $array2["email"] . "</div><div class='col-md-3'></div>
+								</div>";
+							
 							$u_table = mysql_query("SELECT * FROM userInfo", $link) or die("Error reading user table: " . mysql_error());
 
 							break;
@@ -107,6 +124,11 @@
 				}
 				
 			}
+
+			// $str .= "<div class='col-md-3'></div>
+			// 		</div>";
+
+			echo $str;
 
 			//get userInfo table
 	
