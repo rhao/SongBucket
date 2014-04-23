@@ -11,12 +11,14 @@
 	
 	$userFound = false;
 	$userID;
+	$userName;
 
 	//loop through users looking for correct email
 	while ($array = mysql_fetch_array($u_table)) {
 		if($array["email"] == $accountIn) {
 			$userFound = true;
 			$userID = $array["ID"];
+			$userName = $array["name"];
 			break;
 		}
 	}
@@ -34,8 +36,9 @@
 				//valid login info!
 				else {
 					session_start();
-					$_SESSION["user"] = $userID;
-					echo"<script>window.location = '../html/index.html';</script>";
+					$_SESSION["userid"] = $userID;
+					$_SESSION["username"] = $userName;
+					echo"<script>window.location = '../php/index.php';</script>";
 				}
 			}
 			
