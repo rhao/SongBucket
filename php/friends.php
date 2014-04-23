@@ -36,6 +36,56 @@
     		font-size: 14px;
     		width: 150px;
     	}
+    	.btn-custom-light-blue {
+		  background-color: hsl(194, 100%, 42%) !important;
+		  background-repeat: repeat-x;
+		  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1ecaff", endColorstr="#00a4d6");
+		  background-image: -khtml-gradient(linear, left top, left bottom, from(#1ecaff), to(#00a4d6));
+		  background-image: -moz-linear-gradient(top, #1ecaff, #00a4d6);
+		  background-image: -ms-linear-gradient(top, #1ecaff, #00a4d6);
+		  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1ecaff), color-stop(100%, #00a4d6));
+		  background-image: -webkit-linear-gradient(top, #1ecaff, #00a4d6);
+		  background-image: -o-linear-gradient(top, #1ecaff, #00a4d6);
+		  background-image: linear-gradient(#1ecaff, #00a4d6);
+		  border-color: #00a4d6 #00a4d6 hsl(194, 100%, 38.5%);
+		  color: #fff !important;
+		  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23);
+		  -webkit-font-smoothing: antialiased;
+		}
+		.btn-custom-dark {
+		  background-color: hsl(226, 70%, 29%) !important;
+		  background-repeat: repeat-x;
+		  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2044ba", endColorstr="#162e7d");
+		  background-image: -khtml-gradient(linear, left top, left bottom, from(#2044ba), to(#162e7d));
+		  background-image: -moz-linear-gradient(top, #2044ba, #162e7d);
+		  background-image: -ms-linear-gradient(top, #2044ba, #162e7d);
+		  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2044ba), color-stop(100%, #162e7d));
+		  background-image: -webkit-linear-gradient(top, #2044ba, #162e7d);
+		  background-image: -o-linear-gradient(top, #2044ba, #162e7d);
+		  background-image: linear-gradient(#2044ba, #162e7d);
+		  border-color: #162e7d #162e7d hsl(226, 70%, 25.5%);
+		  color: #fff !important;
+		  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23);
+		  -webkit-font-smoothing: antialiased;
+		}
+
+		.btn-custom {
+		  background-color: hsl(113, 92%, 23%) !important;
+		  background-repeat: repeat-x;
+		  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#20d208", endColorstr="#117004");
+		  background-image: -khtml-gradient(linear, left top, left bottom, from(#20d208), to(#117004));
+		  background-image: -moz-linear-gradient(top, #20d208, #117004);
+		  background-image: -ms-linear-gradient(top, #20d208, #117004);
+		  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #20d208), color-stop(100%, #117004));
+		  background-image: -webkit-linear-gradient(top, #20d208, #117004);
+		  background-image: -o-linear-gradient(top, #20d208, #117004);
+		  background-image: linear-gradient(#20d208, #117004);
+		  border-color: #117004 #117004 hsl(113, 92%, 18%);
+		  color: #fff !important;
+		  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+		  -webkit-font-smoothing: antialiased;
+		}
+
     	form {
     		display:inline;
     	}
@@ -55,17 +105,18 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 		    	</button>
-		    	<a class="navbar-brand" href="../html/index.html">SongBucket</a>
+		    	<a class="navbar-brand" href="../php/index.php">SongBucket</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav navbar-right">
-			        <li><a href="../html/index.html">Home</a></li>
+			        <li><a href="../php/index.php">Home</a></li>
 			        <li><a href="../php/search.php">Search Music</a></li>
 			        <li class="active"><a href="../php/friends.php">Find Friends</a></li>
 			        <li><a href="../php/myfriends.php">My Friends</a></li>
 			        <li><a href="../html/bucket.html">My Bucket</a></li>
+			        <li><a href="../php/logout.php">Log Out</a></li>
 		    	</ul>     
 		    </div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
@@ -89,7 +140,7 @@
 						<form id="form-log-in" name="form-log-in" action="findFriends.php" method="post">
 							<span class="search-text">Friend email or name:</span>
 			            	<input name="Search" id="search-field" class="form-control" type="text">
-			                <input type="submit" id="butt" class="btn btn-default" onclick="findFriends.php" value="Add Friend"/>
+			                <input type="submit" id="butt" class="btn btn-default btn-custom" onclick="findFriends.php" value="Add Friend"/>
 			            </form>
 			        </div>
 			   
