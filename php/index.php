@@ -11,14 +11,6 @@
     <link href="../css/navbar.css" rel="stylesheet">
     <link href="../css/index.css" rel="stylesheet">
 
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
     <style>
     	#tan-box {
 			background-color: #F5EDE3;
@@ -42,6 +34,14 @@
   </head>
   <body>
 
+  	    <?php
+			session_start();
+			$phpname = $_SESSION["username"];
+			//echo('<p style="color:#ffffff' . $phpname . '/p>');
+			print "<br/><br/><h1>" . $phpname . "</h1>";
+			
+		?>
+
   	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -58,6 +58,7 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav navbar-right">
+		    		<li id="nameSlot">Hey</li>
 			        <li class="active"><a href="index.html">Home</a></li>
 			        <li><a href="../php/search.php">Search Music</a></li>
 			        <li><a href="../php/friends.php">Find Friends</a></li>

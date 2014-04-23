@@ -11,12 +11,14 @@
 	
 	$userFound = false;
 	$userID;
+	$userName;
 
 	//loop through users looking for correct email
 	while ($array = mysql_fetch_array($u_table)) {
 		if($array["email"] == $accountIn) {
 			$userFound = true;
 			$userID = $array["ID"];
+			$userName = $array["name"];
 			break;
 		}
 	}
@@ -31,8 +33,12 @@
 				if($array["password"] != $passIn) {
 					echo"<h3>Incorrect password... Redirecting</h3><script>setTimeout(function() { window.location = '../html/front_page.html'; }, 1000);</script>";
 				}
+				//valid login info!
 				else {
-					echo"<script>window.location = '../html/index.html';</script>";
+					session_start();
+					$_SESSION["userid"] = $userID;
+					$_SESSION["username"] = $userName;
+					echo"<script>window.location = '../php/index.php';</script>";
 				}
 			}
 			
